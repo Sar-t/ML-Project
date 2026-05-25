@@ -203,6 +203,28 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# Project-specific local files
+.vscode/
+.idea/
+
+# ML data, notebook outputs, and training artifacts
+data/
+notebooks/data/
+notebooks/catboost_info/
+logs/
+artifacts/
+models/
+*.pkl
+*.pickle
+*.joblib
+*.sav
+*.h5
+*.keras
+*.ckpt
+*.onnx
+*.pb
+*.pt
+
 # Ruff stuff:
 .ruff_cache/
 
