@@ -1,7 +1,10 @@
-import sys
+import sys  
+## "sys" PROVIDES  ACCCESS TO PYTHON INTERPRETOR AND RUNTIME ENVIRONMENT
+## It can access things like commandline arguments, versions, exception information etc.
+
 from src.logger import logging
 def error_message_details(error,error_detail:sys):
-    _, _, exc_tb = error_detail.exc_info()
+    _, _, exc_tb = error_detail.exc_info() 
     file_name = exc_tb.tb_frame.f_code.co_filename
     error_message = "Error occurred in python script name [{0}] line number [{1}] error message [{2}]".format(file_name, exc_tb.tb_lineno, str(error))
     
@@ -21,3 +24,5 @@ if __name__ == '__main__':
     except Exception as e:
         logging.info("Division by zero")
         raise CustomException(e,sys)
+    
+    

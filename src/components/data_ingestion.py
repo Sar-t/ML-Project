@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import  dataclass #used to create class variable
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 @dataclass #as we are only defining variables so we use dataclass
 class DataIngestionConfig:
@@ -24,7 +25,7 @@ class DataIngestion:
             df = pd.read_csv(r'D:\Coding\ML-Project\notebooks\data\stud.csv')
             logging.info('Read the dataset from csv')
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)#dont delete if exist  
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)#dont create if exist  
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True) #index means row number and header means column name
             logging.info('Train test split initiated')
 
@@ -46,5 +47,8 @@ if __name__ == '__main__':
     obj = DataIngestion()
     train_data_path,test_data_path = obj.initiate_data_ingestion()
     transformation_obj = DataTransformation()
-    transformation_obj.initiate_data_transformation(train_data_path,test_data_path)
+    train_arr,test_arr,_ = transformation_obj.initiate_data_transformation(train_data_path,test_data_path,)
+    model_trainer_obj = ModelTrainer()
+    r2_score = model_trainer_obj.initiate_model_trainer(train_arr,test_arr,_)
+    print(r2_score)
 
