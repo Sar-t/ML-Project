@@ -212,18 +212,18 @@ data/
 notebooks/data/
 notebooks/catboost_info/
 logs/
-artifacts/
-models/
-*.pkl
-*.pickle
-*.joblib
-*.sav
-*.h5
-*.keras
-*.ckpt
-*.onnx
-*.pb
-*.pt
+# artifacts/
+# models/
+# *.pkl
+# *.pickle
+# *.joblib
+# *.sav
+# *.h5
+# *.keras
+# *.ckpt
+# *.onnx
+# *.pb
+# *.pt
 
 # Ruff stuff:
 .ruff_cache/
