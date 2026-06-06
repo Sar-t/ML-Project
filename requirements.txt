@@ -1,9 +1,6 @@
 numpy
 pandas
 flask
-ipykernel
-seaborn
-matplotlib
 scikit-learn
 catboost
 xgboost
