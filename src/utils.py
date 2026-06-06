@@ -7,6 +7,7 @@ from src.exception import CustomException
 from sklearn.metrics import mean_absolute_error,mean_squared_error,r2_score
 from sklearn.model_selection import GridSearchCV
 
+
 def save_obj(file_path,obj):
     try:
         dir_name = os.path.dirname(file_path)
@@ -46,3 +47,11 @@ def evaluate_models(X_train,X_test,y_train,y_test,models,params):
         
     except Exception as e:
         raise CustomException(e,sys)
+
+def load_object(file_path):
+    try:
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj) ##reconstruct python object stored in file and returns it
+
+    except Exception as e:
+        raise CustomException(e, sys)
