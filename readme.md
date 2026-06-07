@@ -34,7 +34,7 @@ Step-16: Create new self-hosted runner. Whenever a commit is there runner get tr
 
 Step-17: Add action secret keys
 
-
+Step-18: Now github changes will trigger deploy
 
 
 
